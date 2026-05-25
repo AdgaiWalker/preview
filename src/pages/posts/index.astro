@@ -96,6 +96,7 @@ allLogs.forEach(l => {
                     <h3 class="text-parchment text-[15px] font-body truncate group-hover:text-brand transition-colors opacity-90">{log.data.title}</h3>
                   </div>
                   <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-[10px] font-sans font-bold text-brand bg-brand/10 border border-brand/20 px-2 py-0.5 rounded-md">🧠 思考</span>
                     {log.data.tags.slice(0, 2).map((tag: string) => (
                       <span class="text-[11px] font-mono text-parchment-dim bg-brand/5 border border-brand/10 px-2 py-0.5 rounded-md opacity-80">#{tag}</span>
                     ))}
