@@ -1,6 +1,6 @@
 ---
 import SearchModal from './SearchModal.astro';
-import { POSTS, DOCK, AI_LEARN, AI_IDEAS } from '@/lib/routes';
+import { POSTS, DOCK, AI_IDEAS } from '@/lib/routes';
 import { Icon } from 'astro-icon/components';
 
 interface NavItem {
@@ -21,7 +21,6 @@ const navGroups: NavGroup[] = [
       { label: '文章', href: POSTS, icon: 'lucide:pen-line', hint: 'Posts' },
       { label: 'Idea空间', href: '/idea', icon: 'lucide:layout-dashboard', hint: 'Idea Hub' },
       { label: 'AI探索', href: DOCK, icon: 'lucide:package', hint: 'Resources' },
-      { label: '学习', href: AI_LEARN, icon: 'lucide:book-open' },
       { label: 'Idea', href: AI_IDEAS, icon: 'lucide:lightbulb' },
     ]
   },

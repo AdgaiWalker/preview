@@ -5,7 +5,7 @@
  */
 import Base from '../../layouts/Base.astro';
 import { Icon } from 'astro-icon/components';
-import { DOCK, AI_LEARN, AI_IDEAS, AI_TOOLKIT, AI_SOURCES } from '@/lib/routes';
+import { DOCK, AI_IDEAS, AI_TOOLKIT, AI_SOURCES } from '@/lib/routes';
 
 export const prerender = true;
 
@@ -19,16 +19,6 @@ const portalCards = [
     badge: '旗舰通道',
     badgeClass: 'badge-primary',
     tag: 'EXPLORE & CHAT',
-  },
-  {
-    title: '教程学习',
-    english: 'AI Learn',
-    description: '精选系统性 AI 入门长文教程，打通工具与认知的界限，从零起步开启您的高效人机协同探索。',
-    href: AI_LEARN,
-    icon: 'lucide:book-open',
-    badge: '指南教程',
-    badgeClass: 'badge-secondary',
-    tag: 'TUTORIALS & CODES',
   },
   {
     title: '创意脑洞',
