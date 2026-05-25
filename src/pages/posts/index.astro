@@ -100,10 +100,7 @@ allLogs.forEach(l => {
               {groupedLogs[year].map(log => (
                 <a href={postSlug(log.id)} class="log-item group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 px-5 py-4 transition-all no-underline" data-tags={log.data.tags.join(',')} data-category={log.data.category}>
                   <time class="text-parchment-dim font-mono text-sm shrink-0 w-16 opacity-60">{formatDate(log.data.date)}</time>
-                  <div class="flex-1 min-w-0 flex items-center gap-3">
-                    <span class={`category-badge ${log.data.category}`}>
-                      {log.data.category === 'utopia' ? '🛡️ 怂了（不怕错直接干）' : log.data.category === 'ai' ? '🦥 懒了（少折腾提效）' : '😋 馋了（找好玩脑洞）'}
-                    </span>
+                  <div class="flex-1 min-w-0">
                     <h3 class="text-parchment text-[15px] font-body truncate group-hover:text-brand transition-colors opacity-90">{log.data.title}</h3>
                   </div>
                   <div class="flex items-center gap-2 shrink-0">
