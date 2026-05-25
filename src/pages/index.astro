@@ -1,13 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import WalkerProfile from '../components/WalkerProfile.astro';
 import GreetingCard from '../components/GreetingCard.astro';
-import NavigationConsole from '../components/NavigationConsole.astro';
-import MusicPlayer from '../components/MusicPlayer.astro';
 import RecentTraces from '../components/RecentTraces.astro';
-import LikeCounter from '../components/LikeCounter.astro';
 import BrandCard from '../components/BrandCard.astro';
 import DockShowcase from '../components/DockShowcase.astro';
+
 
 import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
@@ -50,28 +47,16 @@ const aiLogs = allLogs
       <div class="grid grid-cols-[250px_430px_280px] justify-center gap-5.5 items-start w-full relative pb-4 pointer-events-auto px-4">
 
         <!-- ========================================= -->
-        <!-- 左栏：基础身份 + 最近文章 + 爱心互动 + 搜索 -->
+        <!-- 左栏：最近文章 + 搜索 -->
         <!-- ========================================= -->
         <div class="flex flex-col gap-4.5 mt-2">
-          <!-- 身份卡 (Walker 名字与真实导航) -->
-          <div class="pop-in delay-1 draggable-card cursor-grab transition-shadow hover:shadow-xl rounded-[40px]">
-            <WalkerProfile />
-          </div>
-
           <!-- 最近文章 (读取真实的本地文章列表) -->
-          <div class="pop-in delay-2 draggable-card cursor-grab transition-shadow hover:shadow-xl rounded-[32px]">
+          <div class="pop-in delay-1 draggable-card cursor-grab transition-shadow hover:shadow-xl rounded-[32px]">
             <RecentTraces logs={aiLogs} />
           </div>
 
-          <!-- 轻量趣味爱心点赞 (Supabase 真实联动，收归左栏底部) -->
-          <div class="pop-in delay-3 flex justify-start pl-3">
-            <div class="draggable-card cursor-grab">
-              <LikeCounter pagePath="/" />
-            </div>
-          </div>
-
           <!-- 极简毛玻璃搜索入口 -->
-          <div class="pop-in delay-4">
+          <div class="pop-in delay-2">
             <button
               class="w-full flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-white/45 border border-white/70 text-parchment-dim/60 hover:bg-white/60 hover:text-parchment transition-all text-[12px] font-body tracking-wide cursor-pointer backdrop-blur-sm shadow-sm"
               id="search-trigger"
@@ -120,22 +105,12 @@ const aiLogs = allLogs
         </div>
 
         <!-- ========================================= -->
-        <!-- 右栏：双框时钟 + AI探索装备 + 跳舞播放器 -->
+        <!-- 右栏：AI探索装备 -->
         <!-- ========================================= -->
         <div class="flex flex-col gap-4.5 mt-2">
-          <!-- LCD 时钟 -->
-          <div class="pop-in delay-1 draggable-card cursor-grab transition-shadow hover:shadow-xl rounded-[36px]">
-            <NavigationConsole />
-          </div>
-
-          <!-- 装备库展示卡 (从左栏右移，平衡重心) -->
-          <div class="pop-in delay-2 draggable-card cursor-grab transition-shadow hover:shadow-xl rounded-[32px]">
+          <!-- 装备库展示卡 -->
+          <div class="pop-in delay-1 draggable-card cursor-grab transition-shadow hover:shadow-xl rounded-[32px]">
             <DockShowcase />
-          </div>
-
-          <!-- 音乐播放器 -->
-          <div class="pop-in delay-3 draggable-card cursor-grab transition-shadow hover:shadow-xl rounded-full">
-            <MusicPlayer />
           </div>
         </div>
 
